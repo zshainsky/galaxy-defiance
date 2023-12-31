@@ -165,7 +165,6 @@ sprite = NodePath("../Anchor/AnimatedSprite2D")
 
 [node name="StatsComponent" type="Node" parent="."]
 script = ExtResource("11_idani")
-health = 2
 
 [node name="HurtboxComponent" type="Area2D" parent="."]
 collision_mask = 0

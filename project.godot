@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="Galaxy Defiance"
-run/main_scene="res://world.tscn"
+run/main_scene="res://menus/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+
+[autoload]
+
+ResourceStash="*res://resource_stash.gd"
 
 [display]
 

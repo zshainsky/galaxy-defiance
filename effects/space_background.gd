@@ -1,3 +1,4 @@
+class_name SpaceBackground
 extends ParallaxBackground
 
 @onready var space_layer: ParallaxLayer = %SpaceLayer as ParallaxLayer

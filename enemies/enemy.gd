@@ -1,3 +1,4 @@
+class_name Enemy
 extends Node2D
 
 @onready var move_component: MoveComponent = $MoveComponent as MoveComponent
@@ -9,7 +10,7 @@ extends Node2D
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent as HurtboxComponent
 @onready var hitbox_component: HitboxComponent = $HitboxComponent as HitboxComponent
 @onready var destroyed_component: DestroyedComponent = $DestroyedComponent as DestroyedComponent
-
+@onready var score_component: ScoreComponent = $ScoreComponent as ScoreComponent
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,6 +20,9 @@ func _ready() -> void:
 	)
 	hitbox_component.hit_hurtbox.connect(destroyed_component.destroy.unbind(1))
 	stats_component.no_health.connect(queue_free)
+	stats_component.no_health.connect(func():
+		score_component.adjust_score()
+	)
 	
 func enemy_hit() -> void:
 	scale_component.tween_scale()
